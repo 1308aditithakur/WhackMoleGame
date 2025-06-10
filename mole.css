@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background: url("./mario-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 2vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  margin: 10px 0;
+}
+
+#characterSelect {
+  margin-top: 20px;
+}
+
+#characterSelect h2 {
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  margin-bottom: 10px;
+}
+
+#characterSelect button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ff4757;
+  color: white;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+#restartBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 25px;
+  font-size: 20px;
+  background-color: #ffcc00;
+  color: black;
+  border: 3px solid white;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive;
+  z-index: 999;
+}
+
+#board {
+  width: 90vmin;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background: url("./soil.png");
+  background-size: cover;
+  border: 3px solid white;
+  border-radius: 25px;
+}
+
+#board div {
+  background: url("./pipe.png") no-repeat center center;
+  background-size: contain;
+  position: relative;
+}
+
+#board div img {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  #characterSelect button,
+  #restartBtn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Cursors by character */
+body.mario #board {
+  cursor: url('./hammer-mario.png') 20 20, auto;
+}
+body.luigi #board {
+  cursor: url('./hammer-luigi.png') 20 20, auto;
+}
+body.peach #board {
+  cursor: url('hammer-peach.png') 20 20, auto;
+}
+body.hammer-hit #board {
+  cursor: url('hammer-hit.png') 20 20, auto;
+}
+
+/* Score Bubble */
+.score-bubble {
+  position: absolute;
+  font-weight: bold;
+  font-size: 20px;
+  animation: floatUp 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 1000;
+  color: white;
+}
+.score-bubble.mario { color: white; }
+.score-bubble.luigi { color: limegreen; }
+.score-bubble.peach { color: hotpink; font-size: 22px; }
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-40px); }
+}
+
+/* Top bar styles */
+.top-bar {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 15px; /* ✅ Add this to push everything down */
+}
+
+.top-bar h1 {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Top-right container for lives + timer */
+.top-right {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Lives (no more absolute on their own) */
+#lives {
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* Timer placed under lives */
+#timer {
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  margin-top: 5px;
+}
+
+/* High score stays on left */
+#highScore {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
