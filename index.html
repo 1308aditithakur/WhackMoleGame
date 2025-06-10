@@ -8,7 +8,6 @@
   <script src="mole.js" defer></script>
 </head>
 <body>
-  <!-- Top bar with high score and lives+timer -->
   <div class="top-bar">
     <h3 id="highScore">High Score: 0</h3>
     <div class="top-right">
@@ -16,16 +15,13 @@
       <h3 id="timer">Timer : 30</h3>
     </div>
   </div>
-
-  <!-- Centered game title -->
+  
   <h1 class="game-title">Whac a Mole</h1>
 
-  <!-- Score only -->
   <div class="stats">
     <h2 id="score">0</h2>
   </div>
 
-  <!-- Character selection -->
   <div id="characterSelect">
     <h2>Select Your Character</h2>
     <button onclick="selectCharacter('mario')">Mario</button>
@@ -33,13 +29,8 @@
     <button onclick="selectCharacter('peach')">Peach</button>
   </div>
 
-  <!-- Game board -->
   <div id="board"></div>
-
-  <!-- Restart button -->
   <button id="restartBtn" onclick="restartGame()">Restart</button>
-
-  <!-- Background music -->
   <audio id="bgMusic" loop autoplay>
     <source src="mario-theme.mp3" type="audio/mpeg" />
   </audio>
