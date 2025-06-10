@@ -58,11 +58,11 @@ A fun and chaotic **Whac-a-Mole** game built using **HTML**, **CSS**, and **Java
 
 Here are some screenshots of the game:
 
-![Game Screenshot 1](whackamole1.png)
+![Game Screenshot 1](mole1.png)
 
-![Game Screenshot 2](whackamole2.png)
+![Game Screenshot 2](mole2.png)
 
-![Game Screenshot 3](whackamole3.png)
+![Game Screenshot 3](mole3.png)
 
 ## Future Improvements
 
