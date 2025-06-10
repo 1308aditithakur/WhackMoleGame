@@ -93,7 +93,6 @@ h1, h2, h3 {
   pointer-events: none;
 }
 
-/* Responsive tweak */
 @media (max-width: 600px) {
   #characterSelect button,
   #restartBtn {
@@ -106,7 +105,6 @@ h1, h2, h3 {
   }
 }
 
-/* Cursors by character */
 body.mario #board {
   cursor: url('./hammer-mario.png') 20 20, auto;
 }
@@ -120,7 +118,6 @@ body.hammer-hit #board {
   cursor: url('hammer-hit.png') 20 20, auto;
 }
 
-/* Score Bubble */
 .score-bubble {
   position: absolute;
   font-weight: bold;
@@ -139,12 +136,12 @@ body.hammer-hit #board {
   100% { opacity: 0; transform: translateY(-40px); }
 }
 
-/* Top bar styles */
+
 .top-bar {
   position: relative;
   width: 100%;
   margin-bottom: 10px;
-  margin-top: 15px; /* ✅ Add this to push everything down */
+  margin-top: 15px; 
 }
 
 .top-bar h1 {
@@ -155,7 +152,6 @@ body.hammer-hit #board {
   text-align: center;
 }
 
-/* Top-right container for lives + timer */
 .top-right {
   position: absolute;
   right: 15px;
@@ -166,14 +162,12 @@ body.hammer-hit #board {
   align-items: flex-end;
 }
 
-/* Lives (no more absolute on their own) */
 #lives {
   font-size: 1.1rem;
   color: white;
   text-shadow: 1px 1px 3px black;
 }
 
-/* Timer placed under lives */
 #timer {
   font-size: 1.1rem;
   color: white;
@@ -181,7 +175,6 @@ body.hammer-hit #board {
   margin-top: 5px;
 }
 
-/* High score stays on left */
 #highScore {
   position: absolute;
   left: 15px;
